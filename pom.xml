@@ -19,6 +19,7 @@
     <modules>
         <module>domain-model-generator-core</module>
         <module>domain-model-generator-cli</module>
+        <module>domain-model-generator-plugin</module>
     </modules>
 
     <dependencies>
