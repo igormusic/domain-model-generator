@@ -11,7 +11,7 @@ public class Property {
     private String name;
     private DataType dataType;
 
-    private Boolean isRequired;
+    private Boolean isRequired = false;
 
     public Property(String name, DataType dataType) {
         this.name = name;

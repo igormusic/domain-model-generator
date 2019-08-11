@@ -3,10 +3,7 @@ package com.transactrules.cli;
 import com.transactrules.cli.cmd.Generate;
 import com.transactrules.cli.cmd.Version;
 
-import io.airlift.airline.Cli;
-import io.airlift.airline.ParseArgumentsUnexpectedException;
-import io.airlift.airline.ParseOptionMissingException;
-import io.airlift.airline.ParseOptionMissingValueException;
+import io.airlift.airline.*;
 
 import java.util.Locale;
 
@@ -22,7 +19,7 @@ public class DomainModelGenerator {
                                         Locale.ROOT,
                                         "Domain Model generator CLI (version %s).",
                                         version))
-                        .withDefaultCommand(Generate.class)
+                        .withDefaultCommand(Help.class)
                         .withCommands(
                                 Generate.class,
                                 Version.class
@@ -42,7 +39,7 @@ public class DomainModelGenerator {
                 System.exit(1);
             }
         } catch (ParseArgumentsUnexpectedException e) {
-            System.err.printf(Locale.ROOT,"[error] %s%n%nSee 'openapi-generator help' for usage.%n", e.getMessage());
+            System.err.printf(Locale.ROOT,"[error] %s%n%nSee 'domain-model-generator help' for usage.%n", e.getMessage());
             System.exit(1);
         } catch (ParseOptionMissingException | ParseOptionMissingValueException e) {
             System.err.printf(Locale.ROOT,"[error] %s%n", e.getMessage());
